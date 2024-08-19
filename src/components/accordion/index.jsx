@@ -46,7 +46,10 @@ export default function Accordion() {
   return (
     <div className="acc-wrapper">
       {/* Button to toggle between single and multi-selection modes */}
-      <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
+      <button
+        
+        onClick={() => setEnableMultiSelection(!enableMultiSelection)}
+      >
         Enable Multi Selection
       </button>
       <div className="accordian">
@@ -69,11 +72,11 @@ export default function Accordion() {
               {/* Conditionally render the content based on the selection mode */}
               {enableMultiSelection
                 ? multiple.indexOf(dataItem.id) !== -1 && (
-                  <div className="acc-content">{dataItem.answer}</div>
-                )
+                    <div className="acc-content">{dataItem.answer}</div>
+                  )
                 : selected === dataItem.id && (
-                  <div className="acc-content">{dataItem.answer}</div>
-                )}
+                    <div className="acc-content">{dataItem.answer}</div>
+                  )}
             </div>
           ))
         ) : (
